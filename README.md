@@ -1,8 +1,6 @@
 # A.Projekt: LCD1602 Anzeige mit PIC18F46K22
 
-Natürlich! Hier ist eine klare und strukturierte Projektbeschreibung für dein **LCD1602-Projekt mit dem PIC18F46K22**, ideal für GitHub:
-
----
+![Screenshot 2025-05-30 113338](https://github.com/user-attachments/assets/62b7c14f-1afe-4dc4-9ca5-6959ea25c5c9)
 
 ## Projekt: LCD1602 Anzeige mit PIC18F46K22
 
