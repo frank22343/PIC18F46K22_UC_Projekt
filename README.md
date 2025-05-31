@@ -1,4 +1,4 @@
-# Projekt: LCD1602 Anzeige mit PIC18F46K22
+# A.Projekt: LCD1602 Anzeige mit PIC18F46K22
 
 Natürlich! Hier ist eine klare und strukturierte Projektbeschreibung für dein **LCD1602-Projekt mit dem PIC18F46K22**, ideal für GitHub:
 
@@ -73,4 +73,76 @@ Dieses Projekt zeigt, wie man ein **LCD1602-Display im 4-Bit-Modus** mit einem *
 
 ### Beispielanzeige
 ![IMG_20250531_193036](https://github.com/user-attachments/assets/c99180d3-4ec9-4ffa-9187-b91a609b852b)
+
+
+Gerne! Hier ist eine **strukturierte Projektbeschreibung** für dein GitHub-Repository zum Projekt **MPU6050 mit PIC18F46K22**:
+
+---
+
+## Projekt: MPU6050 Gyroskop & Beschleunigungssensor mit PIC18F46K22
+
+### Beschreibung
+
+Dieses Projekt demonstriert die Kommunikation zwischen einem **MPU6050-Modul (Gyroskop + Beschleunigungssensor)** und dem **PIC18F46K22 Mikrocontroller** über die **I²C-Schnittstelle**. Die ausgelesenen Beschleunigungswerte in X-, Y- und Z-Richtung werden auf einem **LCD1602 Display** angezeigt.
+
+---
+
+### Verwendete Komponenten
+
+* PIC18F46K22 Mikrocontroller
+* MPU6050 Gyro-/Beschleunigungssensor
+* LCD1602 (4-Bit-Modus)
+* 5V Stromversorgung
+* Pull-up-Widerstände für SDA & SCL (ca. 4.7kΩ)
+* MPLAB X IDE + MCC + XC8 Compiler
+* PIC Programmer (z. B. PICkit 4)
+
+---
+
+### Pinbelegung
+
+| Komponente     | PIC18F46K22 Pin          |
+| -------------- | ------------------------ |
+| SDA            | RC4 (SDA1)               |
+| SCL            | RC3 (SCL1)               |
+| MPU6050 AD0    | GND (I2C-Adresse = 0x68) |
+| INT (optional) | nicht verwendet          |
+| LCD RS         | RA0                      |
+| LCD EN         | RA1                      |
+| LCD D4–D7      | RA2–RA5                  |
+
+---
+
+### Projektfunktionen
+
+* Initialisiert den **MPU6050** über I²C.
+* Liest periodisch die **Beschleunigungsdaten (X, Y, Z)**.
+* Zeigt sie als G-Werte auf dem LCD an.
+* Meldet **"MPU6050 READY"** bei erfolgreicher Initialisierung.
+* Option: Zeigt „I2C Error“ bei Verbindungsfehlern.
+
+---
+
+### Mikrocontroller-Konfiguration (via MCC)
+
+* Takt: **64 MHz (PLL aktiv, interner OSC)**
+* I²C1: aktiviert, Standard-Mode 100 kHz oder Fast-Mode 400 kHz
+* LCD: 4-Bit-Modus, manuell über PORTA gesteuert
+* Pull-ups extern an SDA & SCL erforderlich
+
+---
+
+### Tipps zur Fehlersuche
+
+* MPU6050 AD0 muss **an GND** für Adresse 0x68 (Standard).
+* **SCL und SDA** benötigen **Pull-up-Widerstände**!
+* Wenn auf LCD nur „MPU6050 READY“ erscheint, aber keine Werte:
+  → Prüfe I2C-Adresse, Kabel, Versorgung (3.3 V / 5 V-kompatibel).
+* Bei Fehlern: auf LCD erscheint „I2C Read Error“.
+
+---
+
+
+
+![IMG_20250531_155511](https://github.com/user-attachments/assets/dd2e998c-bdaa-48a1-b87a-3472b43764c9)
 
