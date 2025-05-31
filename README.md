@@ -69,14 +69,8 @@ Dieses Projekt zeigt, wie man ein **LCD1602-Display im 4-Bit-Modus** mit einem *
 * Der ADC-Wert ändert sich bei leisen Geräuschen kaum – teste mit lauten Klatschen.
 * Für den Schwellenwert kann alternativ `analog > 600` verwendet werden, um „LOUD!“ basierend auf analogem Wert zu zeigen.
 * Bei Problemen mit dem ADC: Stelle sicher, dass **ANSELBbits.ANSB3 = 1** gesetzt ist und **RB3** als Eingang konfiguriert ist.
-
-
-### Beispielanzeige
-![IMG_20250531_193036](https://github.com/user-attachments/assets/c99180d3-4ec9-4ffa-9187-b91a609b852b)
-
 ---
-
-## Projekt: MPU6050 Gyroskop & Beschleunigungssensor mit PIC18F46K22
+## B.Projekt: MPU6050 Gyroskop & Beschleunigungssensor mit PIC18F46K22
 
 ### Beschreibung
 
@@ -257,6 +251,6 @@ In diesem Projekt wird ein **digitales und analoges Sound Sensor Modul** (z. B
 
 Füge optional ein Bild deines Aufbaus oder ein LCD-Foto bei, z. B.:
 
-![LCD mit LOUD!](https://your-image-link)
+![IMG_20250531_193036](https://github.com/user-attachments/assets/c99180d3-4ec9-4ffa-9187-b91a609b852b)
 
 
