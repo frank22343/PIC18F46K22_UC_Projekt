@@ -24,6 +24,8 @@ Dieses Projekt zeigt, wie man ein **LCD1602-Display im 4-Bit-Modus** mit einem *
 
 ### Pinbelegung
 
+![image](https://github.com/user-attachments/assets/f72d384c-5564-429d-8b14-803b3eedbfd9)
+
 | LCD1602 Pin | PIC18F46K22 Pin (PORTA) |
 | ----------- | ----------------------- |
 | RS          | RA0                     |
