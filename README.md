@@ -219,10 +219,9 @@ In diesem Projekt wird ein **digitales und analoges Sound Sensor Modul** (z. B
 | Sound D0 (digital) | RB5             |
 
 ---
+![IMG_20250531_201832](https://github.com/user-attachments/assets/52a6883e-fd46-41ee-a03c-f15a10f2167f)
 
 ### Anschluss des Sound Sensors
-
-![IMG_20250531_201832](https://github.com/user-attachments/assets/52a6883e-fd46-41ee-a03c-f15a10f2167f)
 
 | Sensor-Pin | Funktion          | Anschluss  |
 | ---------- | ----------------- | ---------- |
