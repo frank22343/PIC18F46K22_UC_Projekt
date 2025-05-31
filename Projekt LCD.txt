@@ -1,0 +1,127 @@
+#include "mcc_generated_files/system/system.h"
+
+#include <xc.h>
+
+// Define LCD connections
+#define RS LATA0
+#define EN LATA1
+#define D4 LATA2
+#define D5 LATA3
+#define D6 LATA4
+#define D7 LATA5
+
+// Define TRIS for LCD pins
+#define TRIS_RS TRISAbits.TRISA0
+#define TRIS_EN TRISAbits.TRISA1
+#define TRIS_D4 TRISAbits.TRISA2
+#define TRIS_D5 TRISAbits.TRISA3
+#define TRIS_D6 TRISAbits.TRISA4
+#define TRIS_D7 TRISAbits.TRISA5
+
+// Function Prototypes
+void LCD_Command(unsigned char);
+void LCD_Init(void);
+void LCD_Char(unsigned char);
+void LCD_String(const char *);
+void LCD_Clear(void);
+
+void main(void) {
+    
+    SYSTEM_Initialize();
+    
+    // Configure the oscillator (64 MHz using PLL)
+    OSCCON = 0b01110000;  // Set HFINTOSC to 8 MHz
+    OSCTUNE = 0b01000000; // Enable PLL (4x multiplier -> 8 MHz x 4 = 32 MHz)
+
+    // Set all LCD pins as digital outputs
+    TRIS_RS = 0;
+    TRIS_EN = 0;
+    TRIS_D4 = 0;
+    TRIS_D5 = 0;
+    TRIS_D6 = 0;
+    TRIS_D7 = 0;
+
+    // Initialize LCD
+    LCD_Init();
+
+    // Display text in the first row
+    LCD_Command(0x80); // Set cursor to first row, first column
+    LCD_String("Hello, Idea!");
+
+    // Display text in the second row
+    LCD_Command(0xC0); // Set cursor to second row, first column
+    LCD_String("LCD 16x2 OK !!");
+
+    // Blinking RD2 (for verification)
+    TRISDbits.TRISD2 = 0; // Set RD2 as output
+    while (1) {
+        LATDbits.LATD2 = 1; // Turn on RD2
+        __delay_ms(2000);
+        LATDbits.LATD2 = 0; // Turn off RD2
+        __delay_ms(2000);
+    }
+}
+
+// LCD Initialization
+void LCD_Init() {
+    __delay_ms(20); // Wait for power stabilization
+    LCD_Command(0x02); // Initialize LCD in 4-bit mode
+    LCD_Command(0x28); // 2 lines, 5x7 matrix
+    LCD_Command(0x0C); // Display ON, Cursor OFF
+    LCD_Command(0x06); // Auto Increment cursor
+    LCD_Command(0x01); // Clear display
+    __delay_ms(2);      // Delay for LCD to clear
+}
+
+// Send command to LCD
+void LCD_Command(unsigned char cmd) {
+    RS = 0; // Command mode
+    // Send higher nibble
+    D4 = (cmd >> 4) & 1;
+    D5 = (cmd >> 5) & 1;
+    D6 = (cmd >> 6) & 1;
+    D7 = (cmd >> 7) & 1;
+    EN = 1; __delay_us(40); EN = 0;
+
+    // Send lower nibble
+    D4 = cmd & 1;
+    D5 = (cmd >> 1) & 1;
+    D6 = (cmd >> 2) & 1;
+    D7 = (cmd >> 3) & 1;
+    EN = 1; __delay_us(40); EN = 0;
+
+    __delay_ms(2); // Small delay for command to execute
+}
+
+// Display single character
+void LCD_Char(unsigned char data) {
+    RS = 1; // Data mode
+    // Send higher nibble
+    D4 = (data >> 4) & 1;
+    D5 = (data >> 5) & 1;
+    D6 = (data >> 6) & 1;
+    D7 = (data >> 7) & 1;
+    EN = 1; __delay_us(40); EN = 0;
+
+    // Send lower nibble
+    D4 = data & 1;
+    D5 = (data >> 1) & 1;
+    D6 = (data >> 2) & 1;
+    D7 = (data >> 3) & 1;
+    EN = 1; __delay_us(40); EN = 0;
+
+    __delay_ms(2); // Small delay for character to appear
+}
+
+// Display string
+void LCD_String(const char *str) {
+    while (*str) {
+        LCD_Char(*str++);
+    }
+}
+
+// Clear LCD display
+void LCD_Clear() {
+    LCD_Command(0x01);
+    __delay_ms(2); // Wait for LCD to clear
+}
