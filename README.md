@@ -200,8 +200,7 @@ Dieses Projekt demonstriert die Kommunikation zwischen dem **DS1307 Echtzeituhr-
 
 > Alle Werte sind im **BCD-Format** und müssen ggf. umgewandelt werden:
 
-```
-
+---
 ## Wichtige Hinweise
 
 * **CR2032-Knopfzelle** muss eingelegt sein, damit die Zeit bei Stromverlust erhalten bleibt.
@@ -211,4 +210,53 @@ Dieses Projekt demonstriert die Kommunikation zwischen dem **DS1307 Echtzeituhr-
 ---
 ### Erweiterungsmöglichkeiten
 * **Alarm-Funktion** per Vergleich mit aktueller Uhrzeit
+
+---
+## D.Projekt: Sound Sensor Modul mit PIC18F46K22 & LCD1602
+
+### Projektübersicht
+
+In diesem Projekt wird ein **digitales und analoges Sound Sensor Modul** (z. B. KY-038 oder vergleichbar) mit dem **PIC18F46K22 Mikrocontroller** verwendet. Der analoge Pegel des Umgebungsgeräusches wird über den **ADC des Mikrocontrollers** eingelesen und auf einem **LCD1602** angezeigt. Gleichzeitig wird das **digitale Ausgangssignal (D0)** ausgewertet, um laute Geräusche wie Klatschen zu erkennen und visuell auf dem Display als `"LOUD!"` anzuzeigen.
+
+---
+### Verwendete Komponenten
+
+* **PIC18F46K22 Mikrocontroller**
+* **Sound Sensor Modul** 
+* **LCD1602 Display** im 4-Bit-Modus
+* **5V Stromversorgung**
+* **MPLAB X IDE + MCC + XC8 Compiler**
+* **Programmiergerät** (PICkit 3)
+
+---
+### Pinbelegung
+
+| Funktion           | PIC18F46K22 Pin |
+| ------------------ | --------------- |
+| LCD RS             | RA0             |
+| LCD EN             | RA1             |
+| LCD D4–D7          | RA2–RA5         |
+| Sound A0 (analog)  | RB3 (AN11)      |
+| Sound D0 (digital) | RB5             |
+
+---
+
+### Anschluss des Sound Sensors
+
+![IMG_20250531_201832](https://github.com/user-attachments/assets/52a6883e-fd46-41ee-a03c-f15a10f2167f)
+
+| Sensor-Pin | Funktion          | Anschluss  |
+| ---------- | ----------------- | ---------- |
+| A0         | Analoger Ausgang  | RB3 (AN11) |
+| D0         | Digitaler Ausgang | RB5        |
+| GND        | Masse             | GND        |
+| VCC        | +5 V              | VDD        |
+
+---
+### Vorschau / Bildvorschlag
+
+Füge optional ein Bild deines Aufbaus oder ein LCD-Foto bei, z. B.:
+
+![LCD mit LOUD!](https://your-image-link)
+
 
