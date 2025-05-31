@@ -4,9 +4,9 @@ Natürlich! Hier ist eine klare und strukturierte Projektbeschreibung für dein 
 
 ---
 
-## 📘 Projekt: LCD1602 Anzeige mit PIC18F46K22
+## Projekt: LCD1602 Anzeige mit PIC18F46K22
 
-### 🧩 Beschreibung
+### Beschreibung
 
 Dieses Projekt zeigt, wie man ein **LCD1602-Display im 4-Bit-Modus** mit einem **PIC18F46K22 Mikrocontroller** ansteuert. Zusätzlich wird ein analoges Signal (z. B. von einem Sound-Sensor-Modul) auf dem Display angezeigt. Optional kann auch ein Digitalpegel (z. B. bei Geräuscherkennung) ausgewertet und als „LOUD!“ angezeigt werden.
 
