@@ -12,7 +12,7 @@ Dieses Projekt zeigt, wie man ein **LCD1602-Display im 4-Bit-Modus** mit einem *
 
 ---
 
-### 🔧 Verwendete Komponenten
+### Verwendete Komponenten
 
 * PIC18F46K22 Mikrocontroller
 * LCD1602 Modul (4-Bit Interface)
@@ -24,7 +24,7 @@ Dieses Projekt zeigt, wie man ein **LCD1602-Display im 4-Bit-Modus** mit einem *
 
 ---
 
-### 📐 Pinbelegung
+### Pinbelegung
 
 | LCD1602 Pin | PIC18F46K22 Pin (PORTA) |
 | ----------- | ----------------------- |
