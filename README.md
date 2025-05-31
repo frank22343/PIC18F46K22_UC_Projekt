@@ -128,16 +128,9 @@ Dieses Projekt demonstriert die Kommunikation zwischen einem **MPU6050-Modul (Gy
 
 ---
 
-
+## C. Projekt: RTC DS1307 Echtzeituhr mit PIC18F46K22
 
 ![IMG_20250531_155511](https://github.com/user-attachments/assets/dd2e998c-bdaa-48a1-b87a-3472b43764c9)
-
-
-Hier ist eine vollständige **Projektbeschreibung** für dein GitHub-Repository zum Projekt **RTC DS1307 mit PIC18F46K22**. Du kannst das direkt als `README.md` nutzen:
-
----
-
-## C. Projekt: RTC DS1307 Echtzeituhr mit PIC18F46K22
 
 ### Projektübersicht
 
