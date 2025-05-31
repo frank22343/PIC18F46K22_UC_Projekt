@@ -60,14 +60,8 @@ Dieses Projekt zeigt, wie man ein **LCD1602-Display im 4-Bit-Modus** mit einem *
 ---
 
 ![IMG_20250531_165719](https://github.com/user-attachments/assets/499ef9bf-051b-4f1f-83a5-7d72884a2d08)
-
-
-### Nützliche Hinweise
-
-* Der ADC-Wert ändert sich bei leisen Geräuschen kaum – teste mit lauten Klatschen.
-* Für den Schwellenwert kann alternativ `analog > 600` verwendet werden, um „LOUD!“ basierend auf analogem Wert zu zeigen.
-* Bei Problemen mit dem ADC: Stelle sicher, dass **ANSELBbits.ANSB3 = 1** gesetzt ist und **RB3** als Eingang konfiguriert ist.
 ---
+
 ## B.Projekt: MPU6050 Gyroskop & Beschleunigungssensor mit PIC18F46K22
 
 ### Beschreibung
